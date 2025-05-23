@@ -1,0 +1,26 @@
+<div
+  *ngIf="project"
+  class="fixed inset-0 z-50 flex h-screen w-screen bg-black/80 bg-blend-overlay"
+>
+  <div class="w-1/2 h-full overflow-hidden">
+    <img
+      [src]="project?.caseStudy?.imageUrl"
+      [alt]="project?.title"
+      class="object-cover w-full h-full brightness-90"
+    />
+  </div>
+
+  <div class="w-1/2 h-full p-12 flex flex-col justify-center overflow-y-auto">
+    <p class="text-lg mb-8 leading-relaxed" style="color: #ffffff !important">
+      {{ project?.caseStudy?.overview }}
+      <br /><br />
+    </p>
+
+    <button
+      (click)="onClose()"
+      class="mt-8 self-start px-6 py-3 bg-accent hover:text-[#0056b3] text-white cursor-pointer text-lg font-bold rounded hover:bg-opacity-80 transition-colors"
+    >
+      Close
+    </button>
+  </div>
+</div>

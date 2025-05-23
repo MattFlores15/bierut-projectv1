@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  scrollbar-width: none;
+}
+
+p {
+  color: #1a1a1a;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.12rem;
+}
+
+h1, h2, h3 {
+  color: #1a1a1a;
+  font-family: 'Helvetica Neue', sans-serif !important;
+}
+
