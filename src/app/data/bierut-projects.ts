@@ -11,7 +11,7 @@ export interface BierutProject {
     imageUrl: string;
     caseStudy: {
       imageUrl?: string; // Optional image URL for the case study
-      overview: string;
+      overview: string[];
       [key: string]: any; // Allow arbitrary properties for case study details
     };
   }
@@ -29,7 +29,8 @@ export interface BierutProject {
       imageUrl: 'assets/images/161271-2331948915.jpeg',
       caseStudy: {
         imageUrl: 'assets/images/Bkg-Vignelli.png',
-        overview: 'For the International Design Center, New York (IDCNY) in 1987, Michael Bierut faced a unique challenge: combining two vastly different event invitations—one for furniture, one for spacecraft interiors—due to a budget cut. His solution was a brilliant visual pun: a single drawing that appeared as a table with a vase of flowers right-side up, and a rocket ship when inverted. This experience profoundly taught him that the idea, or "content," is more crucial than the aesthetic "form" in graphic design.',
+        overview:[ 'For the International Design Center, New York (IDCNY) in 1987, Michael Bierut faced a unique challenge: combining two vastly different event invitations—one for furniture, one for spacecraft interiors—due to a budget cut.',
+        'His solution was a brilliant visual pun: a single drawing that appeared as a table with a vase of flowers right-side up, and a rocket ship when inverted. This experience profoundly taught him that the idea, or "content," is more crucial than the aesthetic "form" in graphic design.']
       }
     },
     {
@@ -44,7 +45,8 @@ export interface BierutProject {
       imageUrl: 'assets/images/mb_saksfifthavenue_02.png',
       caseStudy: {
         imageUrl: 'assets/images/Bkg-Saks.png',
-        overview: 'For Saks Fifth Avenue, Bierut faced the challenge of merging the brand\'s rich heritage with its contemporary fashion. He ingeniously deconstructed an existing cursive logo from the 1970s into 64 modular squares. This modular system created a "nearly infinite" array of graphic combinations for packaging, effectively conveying both the store\'s history and its perpetual newness through a sophisticated, systematic approach.',
+        overview: ['For Saks Fifth Avenue, Bierut faced the challenge of merging the brand\'s rich heritage with its contemporary fashion.', 
+        'He ingeniously deconstructed an existing cursive logo from the 1970s into 64 modular squares. This modular system created a "nearly infinite" array of graphic combinations for packaging, effectively conveying both the store\'s history and its perpetual newness through a sophisticated, systematic approach.']
       }
     },
     {
@@ -59,7 +61,8 @@ export interface BierutProject {
       imageUrl: 'assets/images/mb_mitmedialab_20.png',
       caseStudy: {
         imageUrl: 'assets/images/Bkg-MIT.png',
-          overview: 'Bierut tackled the dual challenge of creating a timeless yet flexible identity for the MIT Media Lab. He resolved this by designing a core "ML" monogram based on a precise seven-by-seven grid. This same underlying geometric system was then extended to generate unique, cohesive logos for each of the Lab\'s twenty-three diverse research groups, creating an interconnected family of symbols that maintained overall visual coherence while celebrating individual identity.',
+          overview: ['Bierut tackled the dual challenge of creating a timeless yet flexible identity for the MIT Media Lab. He resolved this by designing a core "ML" monogram based on a precise seven-by-seven grid.', 
+            'This same underlying geometric system was then extended to generate unique, cohesive logos for each of the Lab\'s twenty-three diverse research groups, creating an interconnected family of symbols that maintained overall visual coherence while celebrating individual identity.']
       }
     },
     {
@@ -74,7 +77,8 @@ export interface BierutProject {
       imageUrl: 'assets/images/mb-libraryinitiative-01.png',
       caseStudy: {
         imageUrl: 'assets/images/Bkg-L!brary.png',
-        overview: 'For this project, Bierut\'s team designed graphics for libraries in underserved New York City public schools. Beyond a logo, the main challenge involved utilizing the vast, empty wall space above children\'s-height shelves. His solution was to fill this area with oversized murals featuring portraits of the students themselves, transforming a technical problem into a powerful, inspiring display that served as a constant reminder of the project\'s profound purpose: to empower both librarians and children within their communities.',
+        overview: ['For this project, Bierut\'s team designed graphics for libraries in underserved New York City public schools. Beyond a logo, the main challenge involved utilizing the vast, empty wall space above children\'s-height shelves.', 
+          'His solution was to fill this area with oversized murals featuring portraits of the students themselves, transforming a technical problem into a powerful, inspiring display that served as a constant reminder of the project\'s profound purpose: to empower both librarians and children within their communities.']
       }
     },
     {
@@ -89,7 +93,8 @@ export interface BierutProject {
       imageUrl: 'assets/images/MBierutLogo-v2.png',
       caseStudy: {
         imageUrl: 'assets/images/Bkg-Matt.png',
-        overview: 'Drawing directly from the principles of Michael Bierut\'s impactful career, my personal logo redesign was a focused exercise in applying learned methodologies. Inspired by his systematic approach, I developed a new logo using a 7x7 grid. The design prioritizes a simple and clear color palette, reflecting Bierut\'s emphasis on minimalist effectiveness. Concept-driven, the new mark seamlessly merges the globe (my international perspective) with the letters "M" (for Matt) and "F" (for Flores) from my original branding, transforming disparate elements into a single, modern, and cohesive identity, and an homage to Michael Bierut\'s legacy. ',
+        overview: ['Drawing directly from the principles of Michael Bierut\'s impactful career, my personal logo redesign was a focused exercise in applying learned methodologies. Inspired by his systematic approach, I developed a new logo using a 7x7 grid.', 
+          'The design prioritizes a simple and clear color palette, reflecting Bierut\'s emphasis on minimalist effectiveness. Concept-driven, the new mark seamlessly merges the globe (my international perspective) with the letters "M" (for Matt) and "F" (for Flores) from my original branding, transforming disparate elements into a single, modern, and cohesive identity, and an homage to Michael Bierut\'s legacy. ']
       }
     }
   ];

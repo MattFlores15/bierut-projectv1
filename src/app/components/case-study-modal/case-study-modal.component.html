@@ -11,8 +11,12 @@
   </div>
 
   <div class="w-1/2 h-full p-12 flex flex-col justify-center overflow-y-auto">
-    <p class="text-lg mb-8 leading-relaxed" style="color: #ffffff !important">
-      {{ project?.caseStudy?.overview }}
+    <p
+      *ngFor="let paragraph of project?.caseStudy?.overview"
+      class="text-lg mb-8 leading-relaxed"
+      style="color: #ffffff !important"
+    >
+      {{ paragraph }}
       <br /><br />
     </p>
 
