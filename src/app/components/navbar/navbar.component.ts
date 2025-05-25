@@ -21,7 +21,7 @@ export class NavbarComponent {
     { id: 'pentagram-years', label: 'Pentagram', image: 'assets/images/mb_saksfifthavenue_02.png' },
     { id: 'recent-works', label: 'MIT-Lab', image: 'assets/images/mb_mitmedialab_20.png' },
     { id: 'library', label: 'Library Initiative', image: 'assets/images/mb-libraryinitiative-01.png' },
-    { id: 'user-tribute', label: 'My Logo/End', image: 'assets/images/MBierutLogo-v2.png' }
+    { id: 'user-tribute', label: 'My Logo', image: 'assets/images/MBierutLogo-v2.png' }
   ];
 
   constructor(private scrollService: ScrollService) {} // NEW: Inject ScrollService

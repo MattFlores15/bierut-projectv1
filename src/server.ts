@@ -1,12 +1,15 @@
+// src/server.ts
 import {
   AngularNodeAppEngine,
   createNodeRequestHandler,
-  isMainModule,
-  writeResponseToNodeResponse,
+  // isMainModule, // No longer needed for Netlify export pattern
+  writeResponseToNodeResponse, // Still useful if you manage response directly
 } from '@angular/ssr/node';
 import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { Context } from 'node:vm';
+
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
@@ -14,21 +17,7 @@ const browserDistFolder = resolve(serverDistFolder, '../browser');
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
-/**
- * Example Express Rest API endpoints can be defined here.
- * Uncomment and define endpoints as necessary.
- *
- * Example:
- * ```ts
- * app.get('/api/**', (req, res) => {
- *   // Handle API request
- * });
- * ```
- */
-
-/**
- * Serve static files from /browser
- */
+// Serve static files from /browser
 app.use(
   express.static(browserDistFolder, {
     maxAge: '1y',
@@ -37,30 +26,30 @@ app.use(
   }),
 );
 
-/**
- * Handle all other requests by rendering the Angular application.
- */
-app.use('/**', (req, res, next) => {
-  angularApp
-    .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
-    )
-    .catch(next);
-});
+// Handle all other requests by rendering the Angular application.
+// This is your core Angular Universal rendering logic
+const universalHandler = createNodeRequestHandler(app);
 
-/**
- * Start the server if this module is the main entry point.
- * The server listens on the port defined by the `PORT` environment variable, or defaults to 4000.
- */
-if (isMainModule(import.meta.url)) {
-  const port = process.env['PORT'] || 4000;
-  app.listen(port, () => {
-    console.log(`Node Express server listening on http://localhost:${port}`);
-  });
+// Remove the `if (isMainModule(import.meta.url))` block
+// and the app.listen() call, as Netlify manages the server.
+
+// NEW: Export a Netlify-compatible handler function
+// This handler will receive Node.js Request/Response objects,
+// and optionally the Netlify Context for serverless functions.
+// If using Edge Functions, the signature might differ slightly,
+// but the principle of exporting a callable function remains.
+export default async function handler(req: any, res: any, context?: Context) {
+  // Pass the Node.js request and response objects to your Angular handler
+  await universalHandler(req, res);
+
+  // Optional: If you want to access Netlify context within your Angular app (e.g., in @Inject('netlify.context')),
+  // you might need to ensure your Netlify build process correctly injects these.
+  // The provided snippet in your earlier question suggests Netlify handles this.
+  // You might also need to explicitly pass context if you want it *within* the Node.js handler
+  // that createNodeRequestHandler sets up, but generally, the Angular Universal adapter
+  // is designed to make those platform-specific injections happen deeper.
 }
 
-/**
- * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
- */
-export const reqHandler = createNodeRequestHandler(app);
+// Ensure you export the default handler.
+// The `reqHandler` export is primarily for Angular CLI's dev server/build process,
+// not typically the final serverless function export.

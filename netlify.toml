@@ -1,0 +1,21 @@
+# netlify.toml
+[build]
+  publish = "dist/bierut-projectv1/browser" # The folder where your client-side Angular app is built
+  command = "npm run build:ssr" # Command to build your Angular Universal app
+
+# Configure a Netlify Function (Serverless Function) for your SSR server.ts
+# This tells Netlify to build a serverless function from your server.ts.
+[functions]
+  directory = "netlify/functions" # Where Netlify will place and execute your function code
+  node_bundler = "esbuild" # Recommended for faster builds and smaller function sizes
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/server" # Point all traffic to your serverless function
+  status = 200
+
+# Optional: If you use Angular's built-in prerendering for static pages
+# [[redirects]]
+#   from = "/path/to/prerendered-page"
+#   to = "/path/to/prerendered-page.html"
+#   status = 200

@@ -7,7 +7,11 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:bierut-projectv1": "node dist/bierut-projectv1/server/server.mjs"
+    "serve:ssr:bierut-projectv1": "node dist/bierut-projectv1/server/server.mjs",
+    "build:ssr": "ng build && ng run bierut-projectv1:server",
+    "postbuild:ssr": "cp dist/bierut-projectv1/server/main.js netlify/functions/server.js",
+    "deploy": "npm run build:ssr && npm run postbuild:ssr && netlify deploy --prod",
+    "prerender": "ng run bierut-projectv1:prerender"
   },
   "private": true,
   "dependencies": {
