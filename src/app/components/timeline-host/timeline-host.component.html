@@ -1,0 +1,28 @@
+<div
+  #mainScrollContainer
+  class="h-screen w-screen flex overflow-y-hidden overflow-x-auto snap-x snap-mandatory bg-light-gray"
+>
+  <app-navbar></app-navbar>
+  <section id="start" class="section snap-start">
+    <app-start-section></app-start-section>
+  </section>
+  <section id="early-career" class="section snap-start">
+    <app-early-career-section
+      [project]="firstProject"
+    ></app-early-career-section>
+  </section>
+  <section id="pentagram-years" class="section snap-start">
+    <app-pentagram-section [project]="secondProject"></app-pentagram-section>
+  </section>
+  <section id="recent-works" class="section snap-start">
+    <app-recent-work-section [project]="thirdProject"></app-recent-work-section>
+  </section>
+  <section id="library" class="section snap-start">
+    <app-library-project [project]="fourthProject"></app-library-project>
+  </section>
+  <section id="user-tribute" class="section snap-start">
+    <app-user-tribute-section
+      [project]="fifthProject"
+    ></app-user-tribute-section>
+  </section>
+</div>
