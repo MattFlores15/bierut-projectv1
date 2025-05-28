@@ -67,20 +67,18 @@
       </div>
     </div>
 
-    <!-- Design Principle -->
-    <div
-      class="flex flex-row lg:flex-row lg:justify-start items-center justify-center w-full space-x-2 lg:space-x-4 my-5 text-center lg:text-left"
-    >
-      <div
-        class="bg-[#1a1a1a] text-white font-bold py-1 px-2 lg:py-2 lg:px-4 text-sm sm:text-base"
+    <!-- End Section -->
+    <div class="flex w-full items-center justify-between space-x-4 my-5">
+      <button
+        class="flex items-center justify-start gap-2 text-sm text-brand-blue hover:text-[#0056b3] cursor-pointer py-1 px-2 rounded-md transition-colors duration-200"
+        (click)="navigateToEasterEgg()"
+        title="Discover the making of this project"
       >
-        Design Principle
-      </div>
-
-      <hr class="w-12 sm:w-16 h-1 bg-[#1a1a1a] rounded-xs" />
-
-      <div class="uppercase font-bold text-[#0056b3] text-sm lg:text-2xl">
-        {{ project.principle }}
+        <i class="fa-solid fa-wand-magic-sparkles"></i> The Prototyping Journey
+      </button>
+      <div class="flex items-center justify-center gap-2 self-end mr-10">
+        <hr class="w-28 h-1 bg-[#0056b3] rounded-xs" />
+        <p>END</p>
       </div>
     </div>
 

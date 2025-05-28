@@ -23,3 +23,7 @@ export class UserTributeSectionComponent {
     this.router.navigateByUrl('/the-making-of');
   }
 }
+
+
+
+

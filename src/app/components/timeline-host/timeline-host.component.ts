@@ -14,12 +14,14 @@ import { PentagramSectionComponent } from '../pentagram-section/pentagram-sectio
 import { RecentWorkSectionComponent } from '../recent-work-section/recent-work-section.component'; // Adjust path
 import { LibraryProjectComponent } from '../library-project/library-project.component'; // Adjust path
 import { UserTributeSectionComponent } from '../user-tribute-section/user-tribute-section.component'; // Adjust path
+import { RouterOutlet } from '@angular/router';
 
 
 @Component({
   selector: 'app-timeline-host',
   standalone: true,
   imports: [
+    RouterOutlet,
     CommonModule,
     NavbarComponent,
     StartSectionComponent,
