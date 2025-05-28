@@ -1,8 +1,9 @@
 <div
   *ngIf="project"
-  class="fixed inset-0 z-50 flex h-screen w-screen bg-black/80 bg-blend-overlay"
+  class="fixed inset-0 z-50 flex flex-col lg:flex-row bg-black/80 bg-blend-overlay overflow-y-auto"
 >
-  <div class="w-1/2 h-full overflow-hidden">
+  <!-- Left Side: Image -->
+  <div class="w-full lg:w-1/2 h-1/2 lg:h-screen">
     <img
       [src]="project?.caseStudy?.imageUrl"
       [alt]="project?.title"
@@ -10,19 +11,25 @@
     />
   </div>
 
-  <div class="w-1/2 h-full p-12 flex flex-col justify-center overflow-y-auto">
-    <p
-      *ngFor="let paragraph of project?.caseStudy?.overview"
-      class="text-lg mb-8 leading-relaxed"
-      style="color: #ffffff !important"
-    >
-      {{ paragraph }}
-      <br /><br />
-    </p>
+  <!-- Right Side: Content -->
+  <div
+    class="w-full lg:w-1/2 flex flex-col justify-between items-center p-6 lg:p-12 overflow-y-auto max-h-[calc(100vh-64px)] lg:max-h-screen"
+  >
+    <!-- Text -->
+    <div class="w-full text-center lg:text-left">
+      <p
+        *ngFor="let paragraph of project?.caseStudy?.overview"
+        class="text-base sm:text-lg mb-6 sm:mb-8 text-center leading-relaxed"
+        style="color: #ffffff !important"
+      >
+        {{ paragraph }}
+      </p>
+    </div>
 
+    <!-- Close Button -->
     <button
       (click)="onClose()"
-      class="mt-8 self-start px-6 py-3 bg-accent hover:text-[#0056b3] text-white cursor-pointer text-lg font-bold rounded hover:bg-opacity-80 transition-colors"
+      class="mt-4 lg:mt-8 px-4 py-2 lg:px-6 lg:py-3 bg-accent text-white text-lg font-bold rounded transition-colors hover:text-[#0056b3] hover:bg-opacity-80 active:bg-opacity-80 active:text-[#0056b3]"
     >
       Close
     </button>
