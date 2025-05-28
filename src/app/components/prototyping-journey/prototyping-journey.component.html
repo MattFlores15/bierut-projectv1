@@ -1,5 +1,16 @@
 <div class="bg-brand-white min-h-screen font-inter text-brand-dark-gray">
   <header class="pt-12 pb-8 text-center flex flex-col items-center gap-3">
+    <div
+      class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-start mb-4"
+    >
+      <button
+        (click)="goBack()"
+        class="flex items-center gap-2 px-4 py-2 bg-gray-300 text-[#555555] hover:text-[#0056b3] text-sm rounded-md hover:bg-brand-dark-gray transition-colors duration-150"
+      >
+        <i class="fa-solid fa-arrow-left"></i>
+        Go Back to Timeline
+      </button>
+    </div>
     <h1
       class="font-helvetica-neue uppercase font-bold text-4xl md:text-5xl mb-2"
       style="color: #0056b3 !important"

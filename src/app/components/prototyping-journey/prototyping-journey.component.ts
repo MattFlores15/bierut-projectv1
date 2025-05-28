@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './prototyping-journey.component.css'
 })
 export class PrototypingJourneyComponent {
+
+  constructor(private location: Location) {} // Inject Location
+  goBack(): void {
+    this.location.back();
+  }
 
 }
