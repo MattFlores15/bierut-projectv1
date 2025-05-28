@@ -23,11 +23,9 @@ import { ModalService } from './services/modal.service';
 })
 export class AppComponent {
   title = 'bierut-projectv1';
-  // Remove project data (firstProject, etc.)
-  // Remove @ViewChild('mainScrollContainer')
-  // Remove scrollService injection and ngOnInit logic for scrolling
 
-  constructor(public modalService: ModalService) {} // Keep ModalService for the global modal
 
-  // ngOnInit() might be empty or handle other app-level initializations
+  constructor(public modalService: ModalService) {} // ModalService for the global modal
+
+  
 }
